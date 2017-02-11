@@ -1,0 +1,11 @@
+'.source.stellaris':
+  'editor':
+    'foldEndPattern': '^\\s*\\b(\\})\\b$'
+
+    'increaseIndentPattern': '
+        .*\\b(\\{)\\b
+      '
+
+    'decreaseIndentPattern': '
+        .*\\b(\\})\\b
+      '

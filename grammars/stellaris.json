@@ -1,0 +1,81 @@
+{
+  "scopeName": "source.stellaris",
+  "name": "stellaris",
+  "fileTypes": [
+    "stellaris"
+  ],
+
+  "patterns": [
+
+    {
+      "comment": "Constants",
+      "match": "\\b(NULL)\\b",
+      "name": "constant.language.stellaris"
+    },
+    {
+      "comment": "All strings all the time",
+      "match": "(\\'[A-Za-z0-9\\:\\-\\_ %.\\|\\[\\]!@,=\\(\\)<>#\\?\\*\\\"\\/\\\\]*\\'|\\\"[A-Za-z0-9\\:\\-\\_ %.\\|\\[\\]!@,=\\(\\)<>#\\?\\*\\'\\/\\\\]*\\\")",
+      "name": "string.other.quoted-or-unquoted.stellaris"
+    },
+    {
+      "comment": "Comments",
+      "match": "(^\\s*\\#.*|^(\\#).*|(?<=;)\\#.*)",
+      "name": "comment.line.pound.stellaris"
+    },
+    {
+      "comment": "Operators",
+      "match": "\\b(=|<|>|;|\\*|\\-|\\+)\\b",
+      "name": "keyword.operator.stellaris"
+    },
+    {
+      "comment": "Flow control functions",
+      "match": "\\b(NOT|AND|OR|NOR|which|where|when|not|and|or|nor|if|else|limit|switch)\\b",
+      "name": "keyword.control.stellaris"
+    },
+    {
+      "comment": "Development functions, do not forget to remove before sendout!",
+      "match": "\\b(BREAK)\\b",
+      "name": "invalid.illegal.debug.stellaris"
+    },
+    {
+      "comment": "Numbers",
+      "match": "(\\b[0-9]+\\b|\\b_[0-9]+\\b|[0-9]+|_[0-9]+)",
+      "name": "constant.numeric.stellaris"
+    },
+    {
+      "comment": "{} act like CALCULATE and execute a virtual attribute",
+      "match": "\\b([A-Za-z0-9\\:\\-\\_.]*)(\\b=\\b)(\\})\\b",
+      "name": "meta.CALCULATE.function.stellaris",
+      "captures":{
+        "1": {"name": "keyword.control.close.stellaris"},
+        "2": {"name": "keyword.operator.stellaris"},
+        "3": {"name": "keyword.control.open.stellaris"}
+      }
+    },
+    {
+      "comment": "{ opening bracket",
+      "match": "(\\{)",
+      "name": "keyword.control.open.stellaris"
+    },
+    {
+      "comment": "} closing bracket",
+      "match": "(\\})",
+      "name": "keyword.control.close.stellaris"
+    },
+    {
+      "comment": "Functions that require paramaters",
+      "match": "\\b(id|random|country|style|decision_picture|metal|energy|headofgovernment|ideology|minister|manpower|InCabinet|incabinet|flag|money|decision_desc|day|supplies|ai|month|year|name|desc|value|type|picture|persistent|inventions|offset|ai_chance|difficulty|flag|local_flag|province|id|region|government|atwar|exists|save_date|ispuppet|data|army|manpower|one_action)\\b",
+      "name": "keyword.stellaris"
+    },
+    {
+      "comment": "Strong functions",
+      "match": "\\b(trigger|action|action_a|action_b|action_c|action_d|date|TAG|tag|Tag|relation|command|deathdate|lost_national|claims|nuked|land_percentage|domestic|lost_vp|war|puppet|alliance|owned|decision|decision_trigger|policy|control)\\b",
+      "name": "keyword.control.stellaris"
+    },
+    {
+      "comment": "system variables",
+      "match": "\\b(AFG|ALB|ALG|ANG|ARA|ARG|ARM|AST|AUS|AZB|BEL|BEN|BHU|BLR|BOL|BOS|BRA|BRU|BUL|BUR|CAL|CAM|CAN|CGX|CHC|CHI|CHL|CMB|COL|CON|COS|CRO|CSA|CSX|CUB|CXB|CYN|CYP|CZE|DDR|DEN|DFR|DOM|EAF|ECU|EGY|ENG|EQA|EST|ETH|EUS|FIN|FLA|FRA|GAB|GEO|GER|GLD|GRE|GUA|GUI|GUY|HAI|HOL|HON|HUN|ICL|IDC|IND|INO|IRE|IRQ|ISR|ITA|JAP|JOR|KAZ|KOR|KUR|KYG|LAO|LAT|LBY|LEB|LIB|LIT|LUX|MAD|MAL|MAN|MEN|MEX|MIN|MLY|MON|MOR|MOZ|MTN|NAM|NEP|NIC|NIG|NOR|NZL|OMN|OTT|PAK|PAL|PAN|PAR|PER|PHI|POL|POR|PRI|PRK|PRU|QUE|REB|RHO|ROM|RSI|RUS|SAF|SAL|SAR|SAU|SCA|SCH|SCO|SER|SIA|SIB|SIE|SIK|SLO|SLV|SOM|SOV|SPA|SPR|SUD|SWE|SYR|TAJ|TAN|TEX|TIB|TRA|TRK|TUN|TUR|UKR|URU|USA|UZB|VEN|VIC|VIE|WLL|YEM|YUG|ALS|AXI|ALI|U00|U01|U02|U03|U04|U05|U06|U07|U08|U09|U10|U11|U12|U13|U14|U15|U16|U17|U18|U19|U20|U21|U22|U23|U24|U25|U26|U27|U28|U29|U30|U31|U32|U33|U34|U35|U36|U37|U38|U39|U40|U41|U42|U43|U44|U45|U46|U47|U48|U49|U50|U51|U52|U53|U54|U55|U56|U57|U58|U59|U60|U61|U62|U63|U64|U65|U66|U67|U68|U69|U70|U71|U72|U73|U74|U75|U76|U77|U78|U79|U80|U81|U82|U83|U84|U85|U86|U87|U88|U89|U90|U91|U92|U93|U94|U95|U96|U97|U98|U99|USN|UAU|UCH|UBO|UTC|UGS|UCS|UIC|UPR|UER|UTO|UIR|UTL|UPS|UES|URO|UAP|UPE|END)\\b",
+      "name": "variable.control.import.include.stellaris"
+    }
+  ]
+}

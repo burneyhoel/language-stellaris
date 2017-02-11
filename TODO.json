@@ -1,0 +1,89 @@
+has_
+set_
+give_
+add_
+hide_
+show_
+GFX_
+blah blah_event example country_event does nothing
+color after an = with no brakcets as if it was string
+yes and no
+is_ai
+immediate
+option
+title
+text
+is_triggered_only
+want { and } different, check type color in syntax
+= not coloring, check type color in syntax
+***_number needs to color like numbers
+***NOT and NOR are not the same
+***numbers not seperated by word barrier not coloring
+
+tech_repeatable_improved_military_station_damage = {
+prerequisites = { "tech_space_defense_station_2" }
+
+examples
+{
+  "comment": "{} act like CALCULATE and execute a virtual attribute",
+  "match": "(\\{)([A-Za-z0-9\\:\\-\\_.]*)(\\})",
+  "name": "meta.TYPE.function.stellaris",
+  "captures":{
+    "1": {"name": "keyword.control.pick"},
+    "2": {"name": "Variable.paramaters.pick"},
+    "3": {"name": "keyword.control.pick"}
+  }
+},
+{
+  "comment": "@ Positioning",
+  "match": "(@)(?=\\()",
+  "name": "entity.function.pick"
+},
+{
+  "comment": "@system variables",
+  "match": "(?<!\\.)(@[A-Za-z0-9\\-\\_\\.]*|BELL)(?!\\.)\\b",
+  "name": "variable.other.pick"
+},
+{
+  "comment": "F. file variables",
+  "match": "(\\bF.\\b[A-Za-z0-9\\:\\-\\_.]*(?=\\,)|\\bF.\\b[A-Za-z0-9\\:\\-\\_.]*(?=\\ ))",
+  "name": "variable.object.pick"
+},
+
+
+{
+  "comment": "name of thing",
+  "match": "\\b(tech_)(.*)\\b\\=\\b\\{",
+  "name": "meta.TYPE.function.stellaris",
+  "captures":{
+    "1": {"name": "invalid.illegal.stellaris"},
+    "2": {"name": "invalid.illegal.stellaris"},
+  }
+},
+{
+  "comment": "name of  NEEDED thing",
+  "match": "\\bprerequisites \\= \\{\\ \\\"(.*)\\\"\\b",
+  "name": "meta.WHAT.function.stellaris",
+  "captures":{
+    "1": {"name": "invalid.illegal.stellaris"}
+  }
+},
+
+
+
+
+
+stuff for me to run scripts
+{
+  "comment": "name of  NEEDED thing",
+  "match": "\\bprerequisites \\= \\{ \\\"(.*)\\\"",
+  "name": "meta.WHAT.function.stellaris",
+  "captures":{
+    "1": {"name": "invalid.illegal.stellaris"}
+  }
+},
+{
+  "comment": "name of thing",
+  "match": "\\b(tech_.*)\\b",
+  "name": "invalid.illegal.stellaris"
+},
