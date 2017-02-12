@@ -2,7 +2,8 @@
   "scopeName": "source.stellaris",
   "name": "stellaris",
   "fileTypes": [
-    "stellaris"
+    "stellaris",
+    "txt"
   ],
 
   "patterns": [
