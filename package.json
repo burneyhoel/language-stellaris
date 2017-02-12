@@ -7,9 +7,6 @@
     "modding",
     "events"
   ],
-  "activationCommands": {
-    "atom-workspace": "language-stellaris:toggle"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/theexec/language-stellaris.git"
