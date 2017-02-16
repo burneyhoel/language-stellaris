@@ -1,7 +1,7 @@
 {
   "name": "language-stellaris",
   "version": "0.0.4",
-  "description": "An ATOM language package for PICK basic",
+  "description": "An ATOM language package for Stellaris modding",
   "keywords": [
     "Stellaris",
     "modding",
@@ -20,7 +20,7 @@
     "url": "https://github.com/theexec/language-stellaris/issues"
   },
   "dependencies": {},
-  "readme": "# language-stellaris package\n\nPick basic grammar for ATOM.\n",
+  "readme": "# language-stellaris package\n\nStellaris modding grammar for ATOM.\n",
   "readmeFilename": "README.md",
   "homepage": "https://github.com/theexec/language-stellaris#readme",
   "_id": "language-stellaris@0.0.1",
